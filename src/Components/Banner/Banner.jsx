@@ -1,5 +1,4 @@
 import {
-  BannerBackground,
   BannerContainer,
   BannerContent,
   BannerDescription,
@@ -10,17 +9,13 @@ import {
 const Banner = ({ video }) => {
   return (
     <BannerContainer>
-      <BannerBackground src={video.img} alt={video.titulo} />
-
       <BannerContent>
-        <div>
-          <BannerTitle category={video.categoria}>
-            {video.categoria}
-          </BannerTitle>
-          <BannerDescription>{video.descricao}</BannerDescription>
-        </div>
-        <BannerImg src={video.img} alt={video.titulo} />
+        <BannerTitle>{video.categoria}</BannerTitle>
+        <BannerDescription>{video.descricao}</BannerDescription>
       </BannerContent>
+      <a href={video.link} target="_blank" rel="noopener noreferrer">
+        <BannerImg src={video.img} alt={video.titulo} />
+      </a>
     </BannerContainer>
   );
 };
